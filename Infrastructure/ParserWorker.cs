@@ -47,7 +47,7 @@ namespace Infrastructure
                 MyParser myParser = new MyParser();
                 int lastPostId = myParser.ParseLastPostId(documentId);
 
-                Parallel.For(lastPostId - 5, lastPostId, j =>
+                Parallel.For(1, lastPostId, j =>
                 {
                     string htmlComments = _newRequest.GetCommentsHtml(_urlSettings.GroupId[i], j);
                     if (htmlComments == null)
